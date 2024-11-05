@@ -26,6 +26,15 @@ body{
     transform: perspective(600px) rotateX(40deg);
     display: grid;
     grid-template-columns: repeat(15, 1fr);
+    animation: move-bridge 10s linear infinite;
+}
+@keyframes move-bridge {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;  /* Move bridge to the left */
+    }
 }
 .bridge-container span{
     width: 14px;
@@ -50,8 +59,16 @@ body{
     position: absolute;
     margin-top: -170px;
     z-index: 5;
+    animation: run-dog 7s linear infinite;
 }
-
+@keyframes run-dog {
+    0% {
+        left: -100px;  /* Start from left off-screen */
+    }
+    100% {
+        left: 100vw;  /* Move to the right off-screen */
+    }
+}
 .wave{
     position: absolute;
     bottom: 0;
